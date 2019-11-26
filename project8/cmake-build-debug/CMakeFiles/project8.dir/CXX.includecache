@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/zact/code/DataStructure-Practice/project8/graph.h
+iostream
+-
+
+/Users/zact/code/DataStructure-Practice/project8/main.cpp
+iostream
+-
+graph.h
+/Users/zact/code/DataStructure-Practice/project8/graph.h
+

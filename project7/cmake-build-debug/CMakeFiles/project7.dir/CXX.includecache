@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-D:/code/DataStructure-Practice/project7/HuffmanTree.h
+/Users/zact/code/DataStructure-Practice/project7/HuffmanTree.h
 iostream
 -
 
-D:/code/DataStructure-Practice/project7/main.cpp
+/Users/zact/code/DataStructure-Practice/project7/main.cpp
 iostream
 -
 HuffmanTree.h
-D:/code/DataStructure-Practice/project7/HuffmanTree.h
+/Users/zact/code/DataStructure-Practice/project7/HuffmanTree.h
 
