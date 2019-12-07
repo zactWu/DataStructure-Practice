@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/code/DataStructure-Practice/project9/graph.h
+vector.h
+D:/code/DataStructure-Practice/project9/vector.h
+string
+-
+iomanip
+-
+cstdio
+-
+fstream
+-
+sstream
+-
+memory.h
+-
+
+D:/code/DataStructure-Practice/project9/main.cpp
+graph.h
+D:/code/DataStructure-Practice/project9/graph.h
+
+D:/code/DataStructure-Practice/project9/vector.h
+iostream
+-
+
