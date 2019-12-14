@@ -57,15 +57,15 @@ Use a **one-way linked list** as our data structure. Considering that the test r
 
 + member functions
 
-| Name     | Parameter Type | Description                                         |
-| -------- | -------------- | --------------------------------------------------- |
-| Input()  | void           | input the information of students                   |
-| Insert() | void           | insert the information of students                  |
-| Delete() | void           | search and delete the information of students       |
-| Lookup() | void           | search the information of student                   |
-| Modify() | void           | search and modify the information of students       |
-| Output() | void           | statistic students' information and output          |
-| Init()   | void           | create the head list and initialize the linked list |
+| Name     | Return value type | Description                                         |
+| -------- | ----------------- | --------------------------------------------------- |
+| Input()  | void              | input the information of students                   |
+| Insert() | void              | insert the information of students                  |
+| Delete() | void              | search and delete the information of students       |
+| Lookup() | void              | search the information of student                   |
+| Modify() | void              | search and modify the information of students       |
+| Output() | void              | statistic students' information and output          |
+| Init()   | void              | create the head list and initialize the linked list |
 
   
 

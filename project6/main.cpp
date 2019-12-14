@@ -4,54 +4,54 @@
 
 int main() {
     tree<string> family;
-    cout << "  **            å®¶è°±ç®¡ç†ç³»ç»Ÿ               **" << endl;
+    cout << "  **            ¼ÒÆ×¹ÜÀíÏµÍ³               **" << endl;
     cout << "=============================================" << endl;
-    cout << "  **          è¯·é€‰æ‹©è¦æ‰§è¡Œçš„æ“ä½œ:           **" << endl;
-    cout << " **             A -- å®Œå–„å®¶åº­               **" << endl;
-    cout << "**              B -- æ·»åŠ å®¶åº­æˆå‘˜             **" << endl;
-    cout << " **             C -- è§£æ•£å±€éƒ¨å®¶åº­           **" << endl;
-    cout << "  **            D -- æ›´æ”¹å®¶åº­æˆå‘˜å§“å      **" << endl;
-    cout << "   **           E -- é€€å‡ºç¨‹åº           **" << endl;
+    cout << "  **          ÇëÑ¡ÔñÒªÖ´ĞĞµÄ²Ù×÷:           **" << endl;
+    cout << " **             A -- ÍêÉÆ¼ÒÍ¥               **" << endl;
+    cout << "**              B -- Ìí¼Ó¼ÒÍ¥³ÉÔ±             **" << endl;
+    cout << " **             C -- ½âÉ¢¾Ö²¿¼ÒÍ¥           **" << endl;
+    cout << "  **            D -- ¸ü¸Ä¼ÒÍ¥³ÉÔ±ĞÕÃû      **" << endl;
+    cout << "   **           E -- ÍË³ö³ÌĞò           **" << endl;
     cout << "=============================================" << endl;
-    cout << "é¦–å…ˆå»ºç«‹ä¸€ä¸ªå®¶è°±" << endl << "è¯·å…ˆè¾“å…¥ç¥–å…ˆçš„å§“å ";
+    cout << "Ê×ÏÈ½¨Á¢Ò»¸ö¼ÒÆ×" << endl << "ÇëÏÈÊäÈë×æÏÈµÄĞÕÃû ";
     auto * ancestor = new tree_node<string>;
     cin >> *ancestor;
     family.buildTree(ancestor);
     char flag;
     while(true){
-        cout<<"è¯·è¾“å…¥ä½ è¦æ‰§è¡Œçš„æ“ä½œ";
+        cout<<"ÇëÊäÈëÄãÒªÖ´ĞĞµÄ²Ù×÷";
         cin>>flag;
         switch (flag){
             case 'A':{
-                cout<<"è¯·è¾“å…¥è¦å»ºç«‹å®¶åº­çš„äººçš„å§“å";
+                cout<<"ÇëÊäÈëÒª½¨Á¢¼ÒÍ¥µÄÈËµÄĞÕÃû";
                 tree_node<string> target;
                 cin>>target;
                 family.buildFamily(target);
                 break;
             }
             case 'B':{
-                cout<<"è¯·è¾“å…¥ä½ æƒ³è¦æ·»åŠ å„¿å¥³çš„äººçš„å§“å";
+                cout<<"ÇëÊäÈëÄãÏëÒªÌí¼Ó¶ùÅ®µÄÈËµÄĞÕÃû";
                 tree_node<string> target;
                 cin>>target;
                 family.perfectFamily(target);
                 break;
             }
             case 'C':{
-                cout<<"è¯·è¾“å…¥ä½ æƒ³è¦è§£æ•£å®¶åº­çš„äººçš„å§“å";
+                cout<<"ÇëÊäÈëÄãÏëÒª½âÉ¢¼ÒÍ¥µÄÈËµÄĞÕÃû";
                 tree_node<string> target;
                 cin>>target;
                 family.disbandFamily(target);
                 break;
             }
             case 'D':{
-                cout<<"è¯·è¾“å…¥ä½ æƒ³è¦æ”¹å˜çš„äººçš„å§“å";
+                cout<<"ÇëÊäÈëÄãÏëÒª¸Ä±äµÄÈËµÄĞÕÃû";
                 tree_node<string> target;
                 cin>>target;
                 family.replaceMember(target);
                 break;
             }
             case 'E':{
-                cout<<"é€€å‡ºï¼"<<endl;
+                cout<<"ÍË³ö£¡"<<endl;
                 return 0;
             }
         }

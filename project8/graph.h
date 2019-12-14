@@ -1,5 +1,5 @@
 //
-// Created by Ê≠¶‰ø°Â∫≠ on 2019/11/26.
+// Created by Œ‰–≈Õ• on 2019/11/26.
 //
 
 #ifndef PROJECT8_GRAPH_H
@@ -29,9 +29,9 @@ public:
 };
 
 void graph::buildNodes() {
-    cout << "ËØ∑ËæìÂÖ•È°∂ÁÇπÁöÑ‰∏™Êï∞?" << endl;
+    cout << "«Î ‰»Î∂•µ„µƒ∏ˆ ˝?" << endl;
     cin >> node_nums;
-    cout << "ËØ∑‰æùÊ¨°ËæìÂÖ•ÂêÑÈ°∂ÁÇπÁöÑÂêçÁß∞Ôºö"<< endl;
+    cout << "«Î“¿¥Œ ‰»Î∏˜∂•µ„µƒ√˚≥∆£∫"<< endl;
     for (int i = 0; i < node_nums; i++) {
         cin >> node[i];
     }
@@ -40,12 +40,12 @@ void graph::buildNodes() {
 void graph::appendLines() {
     char node1='1', node2='1'; int len=1;
     while (true) {
-        cout << "ËØ∑ËæìÂÖ•‰∏§‰∏™È°∂ÁÇπÂíåËæπ";
+        cout << "«Î ‰»Î¡Ω∏ˆ∂•µ„∫Õ±ﬂ";
         cin >> node1 >> node2 >> len;
         if (node1 == '?') {
             break;
         }
-        for (int i = 0; i < node_nums; ++i) {//mapÂèØÊõø‰ª£
+        for (int i = 0; i < node_nums; ++i) {//mapø…ÃÊ¥˙
             for (int j = 0; j < node_nums; ++j) {
                 if(node1 == node[i] && node2 == node[j]){
                     adjMat[i][j] = len;
@@ -62,7 +62,7 @@ void graph::appendLines() {
 }
 
 void graph::setupPrim() {
-    cout << "ËØ∑ËæìÂÖ•Ëµ∑ÂßãÈ°∂ÁÇπ";
+    cout << "«Î ‰»Î∆ º∂•µ„";
     char start_node;
     int start_num = 0;
     cin >> start_node;
@@ -99,11 +99,11 @@ void graph::setupPrim() {
             }
         }
     }
-    cout << "ÁîüÊàêprimÊúÄÂ∞èÁîüÊàêÊ†ëÔºÅ"<<endl;
+    cout << "…˙≥…prim◊Ó–°…˙≥… ˜£°"<<endl;
 }
 
 void graph::displayPrim() {
-    cout << "ÊúÄÂ∞èÁîüÊàêÊ†ëÁöÑÈ°∂ÁÇπÂèäËæπ‰∏∫Ôºö"<<endl;
+    cout << "◊Ó–°…˙≥… ˜µƒ∂•µ„º∞±ﬂŒ™£∫"<<endl;
     for (int i = 0; i < node_nums-1; ++i) {
         cout << display_node[i].first_node << "-(" << display_node[i].node_cost
              << ")-" << display_node[i].second_node << endl;

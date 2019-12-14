@@ -1,5 +1,5 @@
 //
-// Created by æ­¦ä¿¡åº­ on 2019/11/1.
+// Created by ÎäĞÅÍ¥ on 2019/11/1.
 //
 
 #ifndef PROJECT6_VECTOR_H
@@ -11,8 +11,8 @@ using namespace std;
 template <class type>
 class Vector{
 private:
-    int size;//å·²ç”¨é•¿åº¦
-    int space{};//æ€»å®¹é‡
+    int size;//ÒÑÓÃ³¤¶È
+    int space{};//×ÜÈİÁ¿
     type* element;
 public:
     Vector():size(0),space(0),element(NULL){};
@@ -42,7 +42,7 @@ template <class type>
 type &Vector<type>::operator[](int i) {
     if (i > size)
     {
-        cerr << "è¶Šç•Œè®¿é—®!" << endl;
+        cerr << "Ô½½ç·ÃÎÊ!" << endl;
     }
     return element[i];
 }

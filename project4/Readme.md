@@ -61,16 +61,16 @@ Use a **stack** as our data structure. As the stack is used frequently and is ne
 
 + member functions
 
-| Name                | Parameter Type | Description                    |
-| ------------------- | -------------- | ------------------------------ |
-| stack(int len = 12) | Constructor    | Construct the class            |
-| ~stack()            | Destructor     | destruct the class             |
-| push(type &n)       | void           | push new elements into stack   |
-| pop()               | type           | pop the top element out        |
-| get_top()           | type           | get the top element and return |
-| MakeEmpty()         | void           | Clear the stack                |
-| IsEmpty()           | int            | judge whether empty            |
-| IsFull()            | int            | judge whether full             |
+| Name                | Return value type | Description                    |
+| ------------------- | ----------------- | ------------------------------ |
+| stack(int len = 12) | Constructor       | Construct the class            |
+| ~stack()            | Destructor        | destruct the class             |
+| push(type &n)       | void              | push new elements into stack   |
+| pop()               | type              | pop the top element out        |
+| get_top()           | type              | get the top element and return |
+| MakeEmpty()         | void              | Clear the stack                |
+| IsEmpty()           | int               | judge whether empty            |
+| IsFull()            | int               | judge whether full             |
 
   
 

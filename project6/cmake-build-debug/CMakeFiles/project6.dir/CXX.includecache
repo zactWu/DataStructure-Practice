@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/code/DataStructure-Practice/project6/main.cpp
+iostream
+-
+tree.h
+D:/code/DataStructure-Practice/project6/tree.h
+string
+-
+
+D:/code/DataStructure-Practice/project6/tree.h
+iostream
+-
+string
+-
+vector.h
+D:/code/DataStructure-Practice/project6/vector.h
+
+D:/code/DataStructure-Practice/project6/vector.h
+iostream
+-
+

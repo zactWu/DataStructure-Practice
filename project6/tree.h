@@ -1,5 +1,5 @@
 //
-// Created by æ­¦ä¿¡åº­ on 2019/11/1.
+// Created by ÎäĞÅÍ¥ on 2019/11/1.
 //
 
 #ifndef PROJECT6_TREE_H
@@ -59,7 +59,7 @@ bool tree_node<T>::noChildren() {
 
 template<typename T>
 void tree_node<T>::printChidren() {
-    cout<< getName() << "çš„å­©å­æ˜¯";
+    cout<< getName() << "µÄº¢×ÓÊÇ";
     for(int i = 0; i<children.get_size() && children.get_size() != 0;++i){
         cout<< children[i]->getName()<< " ";
     }
@@ -101,11 +101,11 @@ istream &operator>>(istream &is, tree_node<string> &_person) {
 template <class type>
 class tree{
 public:
-    void buildTree(tree_node<type> * ancestor);//å»ºç«‹å®¶è°±
-    void buildFamily(tree_node<type> & target);//å»ºç«‹å®¶åº­
-    void perfectFamily(tree_node<type> & target );//å®Œå–„å®¶åº­
-    void disbandFamily(tree_node<type> & target);//è§£æ•£å®¶åº­
-    void replaceMember(tree_node<type> & target);//æ›´æ”¹å®¶åº­æˆå‘˜å§“å
+    void buildTree(tree_node<type> * ancestor);//½¨Á¢¼ÒÆ×
+    void buildFamily(tree_node<type> & target);//½¨Á¢¼ÒÍ¥
+    void perfectFamily(tree_node<type> & target );//ÍêÉÆ¼ÒÍ¥
+    void disbandFamily(tree_node<type> & target);//½âÉ¢¼ÒÍ¥
+    void replaceMember(tree_node<type> & target);//¸ü¸Ä¼ÒÍ¥³ÉÔ±ĞÕÃû
 
 private:
     tree_node<type>* root;
@@ -114,27 +114,27 @@ private:
 template<class type>
 void tree<type>::buildTree(tree_node<type> *ancestor) {
     root = ancestor;
-    cout<<"æ­¤å®¶è°±çš„ç¥–å…ˆæ˜¯"<<root->getName()<<endl;
+    cout<<"´Ë¼ÒÆ×µÄ×æÏÈÊÇ"<<root->getName()<<endl;
 }
 
 template<class type>
 void tree<type>::buildFamily(tree_node<type> &target) {
     if(root == nullptr){
-        cerr<<"è¯·å…ˆå»ºç«‹å®¶è°±ï¼"<<endl;
+        cerr<<"ÇëÏÈ½¨Á¢¼ÒÆ×£¡"<<endl;
     }
     else{
         tree_node<type> *p = root->searchNode(target);
         if(p == nullptr){
-            cerr<<"æ²¡æœ‰æ‰¾åˆ°è¯¥å¯¹è±¡ï¼"<<endl;
+            cerr<<"Ã»ÓĞÕÒµ½¸Ã¶ÔÏó£¡"<<endl;
         }
         else if(!p->noChildren()){
-            cerr<<"è¯¥å¯¹è±¡å·²æœ‰å®¶åº­ï¼"<<endl;
+            cerr<<"¸Ã¶ÔÏóÒÑÓĞ¼ÒÍ¥£¡"<<endl;
         }
         else{
-            cout<<"è¯·è¾“å…¥"<<p->getName()<<"çš„å„¿å¥³äººæ•°";
+            cout<<"ÇëÊäÈë"<<p->getName()<<"µÄ¶ùÅ®ÈËÊı";
             int num = 0;
             cin>>num;
-            cout<<"è¯·ä¾æ¬¡è¾“å…¥"<<p->getName()<<"çš„å„¿å¥³å§“å";
+            cout<<"ÇëÒÀ´ÎÊäÈë"<<p->getName()<<"µÄ¶ùÅ®ĞÕÃû";
             for (int i = 0; i < num ; ++i) {
                 auto * temp = new tree_node<type>;
                 cin>>*temp;
@@ -148,18 +148,18 @@ void tree<type>::buildFamily(tree_node<type> &target) {
 template<class type>
 void tree<type>::perfectFamily(tree_node<type> &target) {
     if(root == nullptr){
-        cerr<<"è¯·å…ˆå»ºç«‹å®¶è°±ï¼"<<endl;
+        cerr<<"ÇëÏÈ½¨Á¢¼ÒÆ×£¡"<<endl;
     }
     else{
         tree_node<type> *p = root->searchNode(target);
         if(p == nullptr){
-            cerr<<"æ²¡æœ‰æ‰¾åˆ°è¯¥å¯¹è±¡ï¼"<<endl;
+            cerr<<"Ã»ÓĞÕÒµ½¸Ã¶ÔÏó£¡"<<endl;
         }
         else if(p->noChildren()){
-            cerr<<"è¯¥å¯¹è±¡è¿˜æ²¡å®¶åº­ï¼Œè¯·å…ˆå»ºç«‹å®¶åº­";
+            cerr<<"¸Ã¶ÔÏó»¹Ã»¼ÒÍ¥£¬ÇëÏÈ½¨Á¢¼ÒÍ¥";
         }
         else{
-            cout<<"è¯·è¾“å…¥"<<p->getName()<<"æ–°æ·»åŠ çš„å­å¥³å§“å"<<endl;
+            cout<<"ÇëÊäÈë"<<p->getName()<<"ĞÂÌí¼ÓµÄ×ÓÅ®ĞÕÃû"<<endl;
             auto * temp = new tree_node<type>;
             cin>>*temp;
             p->addChild(temp);
@@ -171,18 +171,18 @@ void tree<type>::perfectFamily(tree_node<type> &target) {
 template<class type>
 void tree<type>::disbandFamily(tree_node<type> &target) {
     if(root == nullptr){
-        cerr<<"è¯·å…ˆå»ºç«‹å®¶è°±ï¼"<<endl;
+        cerr<<"ÇëÏÈ½¨Á¢¼ÒÆ×£¡"<<endl;
     }
     else{
         tree_node<type> *p = root->searchNode(target);
         if(p == nullptr){
-            cerr<<"æ²¡æœ‰æ‰¾åˆ°è¯¥å¯¹è±¡ï¼"<<endl;
+            cerr<<"Ã»ÓĞÕÒµ½¸Ã¶ÔÏó£¡"<<endl;
         }
         else if(p->noChildren()){
-            cerr<<"è¯¥å¯¹è±¡æ— å­å¥³ï¼"<<endl;
+            cerr<<"¸Ã¶ÔÏóÎŞ×ÓÅ®£¡"<<endl;
         }
         else{
-            cout<<"è¦è§£æ•£å®¶åº­çš„äººæ˜¯"<<p->getName()<<endl;
+            cout<<"Òª½âÉ¢¼ÒÍ¥µÄÈËÊÇ"<<p->getName()<<endl;
             p->eliminate();
         }
     }
@@ -191,20 +191,20 @@ void tree<type>::disbandFamily(tree_node<type> &target) {
 template<class type>
 void tree<type>::replaceMember(tree_node<type> &target) {
     if(root == nullptr){
-        cerr<<"è¯·å…ˆå»ºç«‹å®¶è°±ï¼"<<endl;
+        cerr<<"ÇëÏÈ½¨Á¢¼ÒÆ×£¡"<<endl;
     }
     else{
         tree_node<type> *p = root->searchNode(target);
         if(p == nullptr){
-            cerr<<"æ²¡æœ‰æ‰¾åˆ°è¯¥å¯¹è±¡ï¼"<<endl;
+            cerr<<"Ã»ÓĞÕÒµ½¸Ã¶ÔÏó£¡"<<endl;
         }
         else{
-            cout<<"è¯·è¾“å…¥æ›´æ”¹åçš„å§“å"<<endl;
+            cout<<"ÇëÊäÈë¸ü¸ÄºóµÄĞÕÃû"<<endl;
             auto * temp = new tree_node<type>;
             cin>>*temp;
             type before_name = p->getName();
             p->changeName(*temp);
-            cout<< before_name <<"å·²ç»æ›´åä¸º"<< p->getName() <<endl;
+            cout<< before_name <<"ÒÑ¾­¸üÃûÎª"<< p->getName() <<endl;
         }
     }
 }
