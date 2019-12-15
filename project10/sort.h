@@ -6,7 +6,7 @@
 #define PROJECT10_SORT_H
 
 #include <iostream>
-#include <time.h>
+#include <ctime>
 using namespace std;
 
 void BubbleSort(int * ori_array, int len){
