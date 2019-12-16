@@ -54,6 +54,8 @@ int main() {
                 case 8:
                     RadixSort(sort_array, sort_size);
                     break;
+                case 9:
+                    return 0;
                 default:
                     cout << "ÊäÈë·¢Éú´íÎó!" << endl;
             }

@@ -1,5 +1,5 @@
 //
-// Created by æ­¦ä¿¡åº­ on 2019/11/4.
+// Created by ÎäĞÅÍ¥ on 2019/11/4.
 //
 
 #ifndef PROJECT7_HUFFMANTREE_H
@@ -9,27 +9,27 @@
 using namespace std;
 
 
-struct HuffmanTree_node{//èŠ‚ç‚¹ç±»
+struct HuffmanTree_node{//½ÚµãÀà
     int weight;
     int lchild,rchild,parent;
 };
 
-class HuffmanTree{//å“ˆå¤«æ›¼æ ‘
+class HuffmanTree{//¹ş·òÂüÊ÷
 public:
-    void BuildTree(HuffmanTree_node huffman_tree[],const int ori_arr[],int num);//å»ºç«‹å“ˆå¤«æ›¼æ ‘
-    static void SelectChild(HuffmanTree_node huffman_tree[], int target_pos, int &min1, int &min2);//æœç´¢æœ€å°æƒå€¼èŠ‚ç‚¹
-    int PrintWPL(HuffmanTree_node huffman_tree[],int num);//æ‰“å°æœ€å°å¸¦æƒè·¯å¾„é•¿åº¦å’Œ
+    void BuildTree(HuffmanTree_node huffman_tree[],const int ori_arr[],int num);//½¨Á¢¹ş·òÂüÊ÷
+    static void SelectChild(HuffmanTree_node huffman_tree[], int target_pos, int &min1, int &min2);//ËÑË÷×îĞ¡È¨Öµ½Úµã
+    int PrintWPL(HuffmanTree_node huffman_tree[],int num);//´òÓ¡×îĞ¡´øÈ¨Â·¾¶³¤¶ÈºÍ
 
 };
 
 void HuffmanTree::BuildTree(HuffmanTree_node huffman_tree[],const int ori_arr[],int num) {
-    for (int i = 0; i < 2 * num - 1; ++i) {//åˆå§‹åŒ–
+    for (int i = 0; i < 2 * num - 1; ++i) {//³õÊ¼»¯
         huffman_tree[i].lchild = huffman_tree[i].rchild = huffman_tree[i].parent =-1;
     }
-    for (int i = 0; i < num; ++i) {//èµ‹æƒå€¼
+    for (int i = 0; i < num; ++i) {//¸³È¨Öµ
         huffman_tree[i].weight = ori_arr[i];
     }
-    for (int i = num; i < 2 * num - 1; ++i) {//å»ºç«‹çˆ¶èŠ‚ç‚¹
+    for (int i = num; i < 2 * num - 1; ++i) {//½¨Á¢¸¸½Úµã
         int target1,targer2;
         SelectChild(huffman_tree,i,target1,targer2);
         huffman_tree[target1].parent = huffman_tree[targer2].parent = i;
@@ -40,7 +40,7 @@ void HuffmanTree::BuildTree(HuffmanTree_node huffman_tree[],const int ori_arr[],
 }
 
 void HuffmanTree::SelectChild(HuffmanTree_node huffman_tree[], int target_pos, int &min1, int &min2){
-    for (int i = 0; i < target_pos; ++i) {//åˆå§‹åŒ–min1ã€min2
+    for (int i = 0; i < target_pos; ++i) {//³õÊ¼»¯min1¡¢min2
         if(huffman_tree[i].parent == -1){
             min1 = i;
             for (int j = i+1; j < target_pos; ++j) {
@@ -53,12 +53,12 @@ void HuffmanTree::SelectChild(HuffmanTree_node huffman_tree[], int target_pos, i
         }
     }
 
-    for (int i = 0; i < target_pos; ++i) {//æœæœ€å°æƒå€¼min1
+    for (int i = 0; i < target_pos; ++i) {//ËÑ×îĞ¡È¨Öµmin1
         if(huffman_tree[i].parent == -1 && huffman_tree[i].weight < huffman_tree[min1].weight && i != min2){
             min1 = i;
         }
     }
-    for (int j = 0; j < target_pos; ++j) {//æœæœ€å°æƒå€¼min2
+    for (int j = 0; j < target_pos; ++j) {//ËÑ×îĞ¡È¨Öµmin2
         if(huffman_tree[j].parent == -1 && huffman_tree[j].weight < huffman_tree[min2].weight && j != min1){
             min2 = j;
         }
@@ -69,7 +69,7 @@ int HuffmanTree::PrintWPL(HuffmanTree_node *huffman_tree, int num) {
     int ans = 0;
     for (int i = 0; i < 2 * num - 1; ++i) {
         if(huffman_tree[i].lchild != -1 && huffman_tree[i].rchild != -1){
-            ans += huffman_tree[i].weight;//å°†æ‰€æœ‰çˆ¶èŠ‚ç‚¹æƒå€¼ç›¸åŠ å¾—æœ€å°å¸¦æƒè·¯å¾„é•¿åº¦å’Œï¼ˆæœªå®ç°è·¯å¾„é•¿åº¦èµ‹å€¼ï¼‰
+            ans += huffman_tree[i].weight;//½«ËùÓĞ¸¸½ÚµãÈ¨ÖµÏà¼ÓµÃ×îĞ¡´øÈ¨Â·¾¶³¤¶ÈºÍ£¨Î´ÊµÏÖÂ·¾¶³¤¶È¸³Öµ£©
         }
     }
     return ans;

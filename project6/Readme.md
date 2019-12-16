@@ -320,7 +320,7 @@ void tree<type>::buildTree(tree_node<type> *ancestor) {
 
 
 
-core code**
+**core code**
 
 ```c++
 template<class type>
@@ -362,7 +362,7 @@ void tree<type>::buildFamily(tree_node<type> &target) {
 
 ### 3.8 perfectfamily function
 
-core code**
+**core code**
 
 ```c++
 template<class type>

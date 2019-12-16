@@ -86,10 +86,10 @@ bool FindPath(step cur){
 
 
 int main() {
-    cout<<"è¿·å®«åœ°å›¾:"<<endl;
-    cout << "		0åˆ—		1åˆ—		2åˆ—		3åˆ—		4åˆ—		5åˆ—		6åˆ—" << endl;
+    cout<<"ÃÔ¹¬µØÍ¼:"<<endl;
+    cout << "		0ÁÐ		1ÁÐ		2ÁÐ		3ÁÐ		4ÁÐ		5ÁÐ		6ÁÐ" << endl;
     for (int i = 0; i <= MaxHei; ++i) {
-        cout<<i<<"è¡Œ"<<"		";
+        cout<<i<<"ÐÐ"<<"		";
         for (int j = 0; j <= MaxLen; ++j) {
             cout<<map[i][j]<<"		";
         }
@@ -97,12 +97,12 @@ int main() {
     }
     FindPath({1,1});
 
-    if(path.IsEmpty()){//åˆ¤è¯»æ˜¯å¦æœ‰è·¯
-        cout<<"æ— è·¯å¾„å¯èµ°ï¼"<<endl;
+    if(path.IsEmpty()){//ÅÐ¶ÁÊÇ·ñÓÐÂ·
+        cout<<"ÎÞÂ·¾¶¿É×ß£¡"<<endl;
         return 0;
     }
     cout<<endl;
-    cout << "è¿·å®«è·¯å¾„:" << endl;
+    cout << "ÃÔ¹¬Â·¾¶:" << endl;
     while (!path.IsEmpty()) {
         cout << "<" << path.get_top().x << "," << path.get_top().y << ">" << " --> ";
         answer_map[path.get_top().x][path.get_top().y] = 'x';
@@ -111,15 +111,15 @@ int main() {
     answer_map[5][5] = 'x';
     cout << "<5,5>" << endl;
     cout<<endl;
-    cout<<"èµ°æ³•åœ°å›¾:"<<endl;
-    cout << "		0åˆ—		1åˆ—		2åˆ—		3åˆ—		4åˆ—		5åˆ—		6åˆ—" << endl;
+    cout<<"×ß·¨µØÍ¼:"<<endl;
+    cout << "		0ÁÐ		1ÁÐ		2ÁÐ		3ÁÐ		4ÁÐ		5ÁÐ		6ÁÐ" << endl;
     for (int i = 0; i <= MaxHei; ++i) {
-        cout<<i<<"è¡Œ"<<"		";
+        cout<<i<<"ÐÐ"<<"		";
         for (int j = 0; j <= MaxLen; ++j) {
             cout<<answer_map[i][j]<<"		";
         }
         cout<<endl;
     }
-
+    system("pause");
     return 0;
 }

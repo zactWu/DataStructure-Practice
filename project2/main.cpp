@@ -13,7 +13,7 @@ int main() {
     flag1 = flag2 = len1 = len2 = len3 = 0;
     head1 = new list;head2 = new list;head3 = new list;
     head1->next = nullptr;head2->next = nullptr;head3->next = nullptr;
-    p = head1;//è¯»å…¥ç¬¬ä¸€ä¸ªåºåˆ—
+    p = head1;//¶ÁÈëµÚÒ»¸öĞòÁĞ
     while(true){
         cin>>input;
         if(input == -1){
@@ -30,7 +30,7 @@ int main() {
         }
     }
 
-    p = head2;//è¯»å…¥ç¬¬äºŒä¸ªåºåˆ—
+    p = head2;//¶ÁÈëµÚ¶ş¸öĞòÁĞ
     while(true){
         cin>>input;
         if(input == -1){
@@ -49,8 +49,8 @@ int main() {
 
     p = head1;
     r = head3;
-    if(flag1 && flag2) {//è‹¥çš†éç©º
-        for (int i = 0; i < len1; ++i) {//å–äº¤é›†
+    if(flag1 && flag2) {//Èô½Ô·Ç¿Õ
+        for (int i = 0; i < len1; ++i) {//È¡½»¼¯
             p = p->next;
             q = head2->next;
             for (int j = 0; j < len2; ++j) {
@@ -68,13 +68,13 @@ int main() {
                 }
             }
         }
-        if(head3->next == nullptr){//è‹¥äº¤é›†ä¸ºç©º
-            cout<<"NULL"<<endl;//ç›´æ¥è¾“å‡ºNULL
+        if(head3->next == nullptr){//Èô½»¼¯Îª¿Õ
+            cout<<"NULL"<<endl;//Ö±½ÓÊä³öNULL
             return 0;
         }
     }
-    else{//è‹¥ä¸ºç©º
-        cout<<"NULL"<<endl;//ç›´æ¥è¾“å‡ºNULL
+    else{//ÈôÎª¿Õ
+        cout<<"NULL"<<endl;//Ö±½ÓÊä³öNULL
         return 0;
     }
 
@@ -83,6 +83,6 @@ int main() {
         cout<<r->num<<" ";
         r = r->next;
     }
-
+    system("pause");
     return 0;
 }

@@ -11,6 +11,7 @@ int main() {
     }
     if(num == 1){
         cout<<arr[0]<<endl;
+        system("pause");
         return 0;
     }
     if(num == 0){
@@ -22,5 +23,6 @@ int main() {
     huffmanTree.BuildTree(huffmanTreeNode,arr,num);
     ans = huffmanTree.PrintWPL(huffmanTreeNode,num);
     cout<<ans<<endl;
+    system("pause");
     return 0;
 }

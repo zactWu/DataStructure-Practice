@@ -1,5 +1,5 @@
 //
-// Created by Ê≠¶‰ø°Â∫≠ on 2019/10/29.
+// Created by Œ‰–≈Õ• on 2019/10/29.
 //
 
 #ifndef PROJECT5_QUEUE_H
@@ -31,7 +31,7 @@ queue<type>::queue() {
     arr = new type[1000];
     count = 0;
     if(!arr){
-        cerr<<"ÂÜÖÂ≠òÁî≥ËØ∑Â§±Ë¥•ÔºÅ"<<endl;
+        cerr<<"ƒ⁄¥Ê…Í«Î ß∞‹£°"<<endl;
     }
 }
 
@@ -56,7 +56,7 @@ type queue<type>::front() {
 template<class type>
 type queue<type>::dequeue() {
     if(count == 0){
-        cerr<<"ÈòüÂàó‰∏∫Á©∫ÔºÅ"<<endl;
+        cerr<<"∂”¡–Œ™ø’£°"<<endl;
     }
     type ans = arr[0];
     count--;

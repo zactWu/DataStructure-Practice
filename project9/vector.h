@@ -1,5 +1,5 @@
 //
-// Created by æ­¦ä¿¡åº­ on 2019/11/1.
+// Created by ÎäĞÅÍ¥ on 2019/11/1.
 //
 
 #ifndef PROJECT6_VECTOR_H
@@ -11,8 +11,8 @@ using namespace std;
 template <class type>
 class Vector{
 private:
-    int size;//å·²ç”¨é•¿åº¦
-    int space;//æ€»å®¹é‡
+    int size;//ÒÑÓÃ³¤¶È
+    int space;//×ÜÈİÁ¿
     type* element;
 public:
     Vector(int s=0):size(s),space(s+16){ element = new type[space];}
@@ -27,7 +27,7 @@ public:
     bool pop_back();
     bool Delete(int ind);
     Vector& operator=(Vector& other){
-        //    åˆ¤æ–­æ˜¯å¦ä¸ºè‡ªèº«èµ‹å€¼
+        //    ÅĞ¶ÏÊÇ·ñÎª×ÔÉí¸³Öµ
         if (this == &other)
             return *this;
         else {
@@ -49,7 +49,7 @@ template <class type>
 type &Vector<type>::operator[](int i) {
     if (i > size)
     {
-        cerr << "è¶Šç•Œè®¿é—®!" << endl;
+        cerr << "Ô½½ç·ÃÎÊ!" << endl;
     }
     return element[i];
 }
@@ -93,7 +93,7 @@ bool Vector<type>::pop_back(){
 template<class type>
 bool Vector<type>::Delete(int ind) {
     if(ind<0 || ind >= size){
-        cerr << "åˆ é™¤å¤±è´¥ï¼"<<endl;
+        cerr << "É¾³ıÊ§°Ü£¡"<<endl;
         return false;
     }
     for (int i = ind; i < size - 1; ++i) {

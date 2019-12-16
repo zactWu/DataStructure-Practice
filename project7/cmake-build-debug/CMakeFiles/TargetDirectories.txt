@@ -1,3 +1,0 @@
-D:/code/DataStructure-Practice/project7/cmake-build-debug/CMakeFiles/project7.dir
-D:/code/DataStructure-Practice/project7/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/code/DataStructure-Practice/project7/cmake-build-debug/CMakeFiles/rebuild_cache.dir

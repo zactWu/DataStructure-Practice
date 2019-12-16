@@ -178,6 +178,7 @@ void graph::output() {
     cout << endl << "课表保存成功！ " <<endl;
     inf.close();
     outf.close();
+    system("pause");
     exit(0);
 }
 

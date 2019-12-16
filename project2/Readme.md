@@ -12,7 +12,7 @@
 
 ### 1.1 question background
 
-How to get the intersection part of two ordered linked list? It always  appear as an algorithm problem since it's not very complicated. In fact, this question is an abstraction of some actual problems. for example, a businese man runs two kinds of busineses, and in each one he use list to store his clients' information, ordered by id. If this  businese man wanted to see who are both in his two businese, He would  face this problem.
+How to get the intersection part of two ordered linked list? It always  appear as an algorithm problem since it's not very complicated. In fact, this question is an abstraction of some actual problems. for example, a business man runs two kinds of business, and in each one he use list to store his clients' information, ordered by id. If this  business man wanted to see who are both in his two business, He would  face this problem.
 
 
 
@@ -103,7 +103,7 @@ p = head2;//读入第二个序列
 
 
 
-example**
+**example**
 
 | 序号 | 输入                      | 输出      | 说明                                            |
 | ---- | ------------------------- | --------- | ----------------------------------------------- |
@@ -115,7 +115,7 @@ example**
 
 
 
-core code**
+**core code**
 
 ```C++
 for (int i = 0; i < len1; ++i) {//取交集

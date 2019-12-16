@@ -18,18 +18,18 @@ int opr_prio(char opr){
 }
 
 string convert(string ori_str){
-    stack<char> s;//ç”¨æ ˆå­˜æ“ä½œç¬¦
+    stack<char> s;//ÓÃÕ»´æ²Ù×÷·û
     string original_str(ori_str.length() - 1, ' ');
-    string str(2 * original_str.length(), ' ');//ä¸­ç¼€å­—ç¬¦ä¸²
+    string str(2 * original_str.length(), ' ');//ÖĞ×º×Ö·û´®
     int i = 0;
     int j = 0;
 
-    for (int l = 0; l < original_str.length(); ++l) {//å»é™¤ç­‰å·
+    for (int l = 0; l < original_str.length(); ++l) {//È¥³ıµÈºÅ
         original_str[l] = ori_str[l];
     }
     int len = original_str.length();
-    while (i < original_str.length()) {//å¤„ç†å•ç›®è¿ç®—ç¬¦
-        if(i == 0 && (original_str[0] == '-'|| original_str[0] == '+')){//é¦–ä½å•ç›®è¿ç®—ç¬¦
+    while (i < original_str.length()) {//´¦Àíµ¥Ä¿ÔËËã·û
+        if(i == 0 && (original_str[0] == '-'|| original_str[0] == '+')){//Ê×Î»µ¥Ä¿ÔËËã·û
             str[0] = '(';
             str[1] = '0';
             str[2] = original_str[0];
@@ -40,7 +40,7 @@ string convert(string ori_str){
             len += 3;
         }
         else if(i>0 && (original_str[i] == '-'|| original_str[i] == '+')
-                && original_str[i-1] == '('){//åç»­å•ç›®è¿ç®—ç¬¦
+                && original_str[i-1] == '('){//ºóĞøµ¥Ä¿ÔËËã·û
             str[j] = '(';
             str[j+1] = '0';
             str[j+2] = original_str[i];
@@ -57,41 +57,41 @@ string convert(string ori_str){
         j++;
     }
 
-    for (int k = 0; k < str.length(); ++k) {//å‡å»æ‹¬å·æ‰€å é•¿åº¦
+    for (int k = 0; k < str.length(); ++k) {//¼õÈ¥À¨ºÅËùÕ¼³¤¶È
         if(str[k] == '(' || str[k] == ')'){
             len--;
         }
     }
-    string rpnstr(len ,' ');//åç¼€å­—ç¬¦ä¸²
+    string rpnstr(len ,' ');//ºó×º×Ö·û´®
     int index =0;
-    for (int j = 0; j < str.length(); ++j) {//å°†ä¸­ç¼€è¡¨è¾¾å¼è½¬æ¢ä¸ºåç¼€è¡¨è¾¾å¼
-        if (str[j] >= '0' && str[j] <= '9') {//è‹¥ä¸ºæ“ä½œæ•°åˆ™æš‚å­˜å­—ç¬¦ä¸²
+    for (int j = 0; j < str.length(); ++j) {//½«ÖĞ×º±í´ïÊ½×ª»»Îªºó×º±í´ïÊ½
+        if (str[j] >= '0' && str[j] <= '9') {//ÈôÎª²Ù×÷ÊıÔòÔİ´æ×Ö·û´®
             rpnstr[index++] = str[j];
         }
-        else if (s.IsEmpty() || str[j] == '(') {//è‹¥æ ˆä¸ºç©ºæˆ–è¯»å…¥å·¦æ‹¬å·åˆ™è¿›æ ˆ
+        else if (s.IsEmpty() || str[j] == '(') {//ÈôÕ»Îª¿Õ»ò¶ÁÈë×óÀ¨ºÅÔò½øÕ»
             s.push(str[j]);
         }
-        else if (str[j] == ')') {//è‹¥è¯»å…¥å³æ‹¬å·
+        else if (str[j] == ')') {//Èô¶ÁÈëÓÒÀ¨ºÅ
             while (s.get_top() != '(') {
                 rpnstr[index++] = s.pop();
             }
             s.pop();
 
         }
-        else {//è‹¥æ ˆä¸ä¸ºç©ºä¸”è¯»å…¥æ“ä½œç¬¦ä¼˜å…ˆåº¦å°äºæ ˆé¡¶æ“ä½œç¬¦åˆ™å‡ºæ ˆè¿›å­—ç¬¦ä¸²
+        else {//ÈôÕ»²»Îª¿ÕÇÒ¶ÁÈë²Ù×÷·ûÓÅÏÈ¶ÈĞ¡ÓÚÕ»¶¥²Ù×÷·ûÔò³öÕ»½ø×Ö·û´®
             while (!s.IsEmpty() && (opr_prio(str[j]) <= opr_prio(s.get_top()))) {
                 rpnstr[index++] = s.pop();
             }
-                s.push(str[j]);//å‡ºæ ˆå®Œå°†å½“å‰è¯»å…¥æ“ä½œæ•°è¿›æ ˆ
+                s.push(str[j]);//³öÕ»Íê½«µ±Ç°¶ÁÈë²Ù×÷Êı½øÕ»
         }
     }
-    while(!s.IsEmpty()){//å‡ºæ ˆå…¥ä¸²è‡³æ ˆç©º
+    while(!s.IsEmpty()){//³öÕ»Èë´®ÖÁÕ»¿Õ
         rpnstr[index++] = s.pop();
     }
-    return rpnstr;//è¿”å›å­—ç¬¦ä¸²
+    return rpnstr;//·µ»Ø×Ö·û´®
 }
 
-int cal(int a,int b, int op){//è®¡ç®—å‡½æ•°
+int cal(int a,int b, int op){//¼ÆËãº¯Êı
     if(op == '+') return b + a;
     else if(op == '-') return b - a;
     else if(op == '*') return b * a;
@@ -107,7 +107,7 @@ int cal(int a,int b, int op){//è®¡ç®—å‡½æ•°
     else return 0;
 }
 
-int calrpn(string rpn){//è®¡ç®—åç¼€è¡¨è¾¾å¼
+int calrpn(string rpn){//¼ÆËãºó×º±í´ïÊ½
     stack<int> ss;
     int tmp;
     for (int i = 0; i < rpn.length(); ++i) {
@@ -130,39 +130,39 @@ int main() {
     string str;
     char con_flag = 'y';
     while(con_flag == 'y'){
-        cout<<"è¾“å…¥è¡¨è¾¾å¼ï¼š"<<endl;
+        cout<<"ÊäÈë±í´ïÊ½£º"<<endl;
         cin>>str;
-        for (int i = 0; i < str.length(); ++i) {//æ£€æµ‹éæ³•è¾“å…¥
+        for (int i = 0; i < str.length(); ++i) {//¼ì²â·Ç·¨ÊäÈë
             if(str[i] == '.'){
-                cerr<<"è¯·è¾“å…¥æ•´æ•°ï¼"<<endl;
+                cerr<<"ÇëÊäÈëÕûÊı£¡"<<endl;
                 str = "0=";
                 break;
             }
             if(str[i] >= '0' && str[i] <= '9' && str[i+1] >= '0' && str[i+1] <= '9'){
-                cerr<<"è¯·å‹¿é‡å¤è¾“å…¥æ•°å­—ï¼"<<endl;
+                cerr<<"ÇëÎğÖØ¸´ÊäÈëÊı×Ö£¡"<<endl;
                 str = "0=";
                 break;
             }
             if((str[i] == '+' || str[i] == '-' || str[i] == '*' || str[i] == '/'|| str[i] == '^' || str[i] == '%')
             &&(str[i+1] == '+' || str[i+1] == '-' || str[i+1] == '*' || str[i+1] == '/' || str[i+1] == '^' ||str[i+1] == '%')){
-                cerr<<"è¯·å‹¿é‡å¤è¾“å…¥æ“ä½œç¬¦ï¼"<<endl;
+                cerr<<"ÇëÎğÖØ¸´ÊäÈë²Ù×÷·û£¡"<<endl;
                 str = "0=";
                 break;
             }
             if(str == "+" || str == "-" || str == "*" || str == "/" || str == "^" || str == "%" || str == "="){
-                cerr<<"è¯·è‡³å°‘è¾“å…¥1ä¸ªæ“ä½œæ•°ï¼"<<endl;
+                cerr<<"ÇëÖÁÉÙÊäÈë1¸ö²Ù×÷Êı£¡"<<endl;
                 str = "0=";
                 break;
             }
             if(str[str.length()-1] != '='){
-                cerr<<"è¯·åœ¨è¡¨è¾¾å¼æœ€åè¾“å…¥'='ï¼"<<endl;
+                cerr<<"ÇëÔÚ±í´ïÊ½×îºóÊäÈë'='£¡"<<endl;
                 str = "0=";
                 break;
             }
         }
         int ans = calrpn(convert(str));
         cout<<ans<<endl;
-        cout<<"æ˜¯å¦ç»§ç»­ ï¼ˆy, nï¼‰?";
+        cout<<"ÊÇ·ñ¼ÌĞø £¨y, n£©?";
         cin>>con_flag;
     }
     return 0;

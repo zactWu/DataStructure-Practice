@@ -372,7 +372,10 @@ void List::Output()
 **actual result:**
 ![image-20191212194854352](..\material\image-20191212194854352.png)
 
+
+
 ### 4.5 people in delete, search and modify choice don't exist
+
 **Test case:** input a wrong id of people to delete, search or modify
 
 **expected result:** remind to input acceptable number

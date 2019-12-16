@@ -25,6 +25,7 @@ int main() {
             cout << customer_b.dequeue() << " " ;
         }
         if(customer_a.is_empty() && customer_b.is_empty()){
+            system("pause");
             return 0;
         }
     }

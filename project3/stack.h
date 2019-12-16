@@ -1,5 +1,5 @@
-//æ•°ç»„æ ˆå®ç°
-// Created by æ­¦ä¿¡åº­ on 2019/10/22.
+//Êı×éÕ»ÊµÏÖ
+// Created by ÎäĞÅÍ¥ on 2019/10/22.
 //
 
 #ifndef PROJECT3_STACK_H
@@ -11,18 +11,18 @@ using namespace std;
 template <class type>
 class stack{
 public:
-    stack(int len = 12);//defaultå€¼
+    stack(int len = 12);//defaultÖµ
     ~stack();
-    void push(type &n);//å…¥æ ˆ
-    type pop();//å‡ºæ ˆ
-    type get_top();//å–æ ˆé¡¶å…ƒç´ 
-    void MakeEmpty(){top = -1;}//ç½®ç©º
+    void push(type &n);//ÈëÕ»
+    type pop();//³öÕ»
+    type get_top();//È¡Õ»¶¥ÔªËØ
+    void MakeEmpty(){top = -1;}//ÖÃ¿Õ
     int IsEmpty(){return top == -1;}
     int IsFull(){return top ==maxsize-1;}
 private:
-    int top;//æ ˆé¡¶
-    type *elements;//æ•°ç»„
-    int maxsize;//æ ˆæœ€å¤§å®¹é‡
+    int top;//Õ»¶¥
+    type *elements;//Êı×é
+    int maxsize;//Õ»×î´óÈİÁ¿
 };
 
 template<class type>
@@ -31,7 +31,7 @@ stack<type>::stack(int len) {
     top = -1;
     elements = new type[maxsize];
     if (!elements){
-        cerr<<"æ ˆå†…å­˜ç”³è¯·å¤±è´¥ï¼"<<endl;
+        cerr<<"Õ»ÄÚ´æÉêÇëÊ§°Ü£¡"<<endl;
     }
 }
 
@@ -43,7 +43,7 @@ stack<type>::~stack() {
 template<class type>
 void stack<type>::push(type &n) {
     if(IsFull()){
-        cerr<<"æ ˆæ»¡ï¼"<<endl;
+        cerr<<"Õ»Âú£¡"<<endl;
     }
     elements[++top] = n;
 }
@@ -51,7 +51,7 @@ void stack<type>::push(type &n) {
 template<class type>
 type stack<type>::pop() {
     if(IsEmpty()){
-        cerr<<"æ ˆç©ºï¼"<<endl;
+        cerr<<"Õ»¿Õ£¡"<<endl;
     }
     return elements[top--];
 }
@@ -59,7 +59,7 @@ type stack<type>::pop() {
 template<class type>
 type stack<type>::get_top() {
     if(IsEmpty()){
-        cerr<<"æ ˆç©ºï¼"<<endl;
+        cerr<<"Õ»¿Õ£¡"<<endl;
     }
     return elements[top];
 }
