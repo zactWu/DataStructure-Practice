@@ -288,3 +288,33 @@ Remind that there is no valid path and return normally
 **test result:**
 
 ![屏幕快照 2019-12-13 下午11.18.56](../material/屏幕快照 2019-12-13 下午11.18.56.png)
+
+
+
+## 5.Compilation information
+
+### 5.1 CMakeLists
+
+```c++
+cmake_minimum_required(VERSION 3.15)
+
+project(project3)
+
+set(CMAKE_CXX_STANDARD 14)
+
+add_executable(project3 main.cpp)
+
+set(CMAKE_EXE_LINKER_FLAGS -static)
+```
+
+
+
+### 5.2 File Encoding
+
++ coding with **GBK**
+
+  
+
+### 5.3 Cross-platform Compilation 
+
+Executables are cross-platform compiled in **Windows(.exe)** and **Linux(.out)**

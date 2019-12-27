@@ -187,3 +187,31 @@ error reminder
 <img src="../material/image-20191215034853801.png" alt="image-20191215034853801" style="zoom:150%;" /> 
 
 
+
+## 5.Compilation information
+
+### 5.1 CMakeLists
+
+```c++
+cmake_minimum_required(VERSION 3.15)
+
+project(project7)
+
+set(CMAKE_CXX_STANDARD 14)
+
+add_executable(project7 main.cpp)
+
+set(CMAKE_EXE_LINKER_FLAGS -static)
+```
+
+
+
+### 5.2 File Encoding
+
++ coding with **GBK**
+
+  
+
+### 5.3 Cross-platform Compilation 
+
+Executables are cross-platform compiled in **Windows(.exe)** and **Linux(.out)**
